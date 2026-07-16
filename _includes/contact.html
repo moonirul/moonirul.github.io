@@ -1,0 +1,51 @@
+<section id="contact" class="mt-10">
+    <h2 class="text-xl font-semibold mb-3">Contact</h2>
+    <div class="bg-slate-50 rounded-2xl p-4">
+        <ul class="space-y-2 text-slate-700">
+
+            {% if site.data.author.email %}
+            <li class="flex items-start gap-3">
+                <i class="bi bi-envelope-fill text-sky-600 mt-0.5"></i>
+                <a class="underline hover:no-underline text-sky-700" href="mailto:{{ site.data.author.email }}">{{
+                    site.data.author.email }}</a>
+            </li>
+            {% endif %}
+
+            {% if site.data.author.affiliation %}
+            <li class="flex items-start gap-3">
+                <i class="bi bi-building text-slate-600 mt-0.5"></i>
+                <span>
+                    {{ site.data.author.affiliation }}
+                    {% if site.data.author.affiliation_url %}
+                    (<a class="underline hover:no-underline text-sky-700" href="{{ site.data.author.affiliation_url }}"
+                        target="_blank" rel="noopener">site</a>)
+                    {% endif %}
+                </span>
+            </li>
+            {% endif %}
+
+            {% if site.data.author.phone %}
+            <li class="flex items-start gap-3">
+                <i class="bi bi-telephone-fill text-emerald-600 mt-0.5"></i>
+                <span>{{ site.data.author.phone }}</span>
+            </li>
+            {% endif %}
+
+            {% if site.data.author.address %}
+            <li class="flex items-start gap-3">
+                <i class="bi bi-geo-alt-fill text-rose-600 mt-0.5"></i>
+                <div class="ml-1">
+                    {{ site.data.author.address.street }}, {{ site.data.author.address.city }}
+                    {% if site.data.author.address.region %} ({{ site.data.author.address.region }}){% endif %},
+                    {% if site.data.author.address.postcode %}{{ site.data.author.address.postcode }},{% endif %}
+                    {% if site.data.author.address.country %} {{ site.data.author.address.country }}{% endif %}
+                    <br>
+                    {% if site.data.author.directions %}{{ site.data.author.directions }}{% endif %}
+                    {% if site.data.author.room %}, {{ site.data.author.room }}{% endif %}
+                </div>
+            </li>
+            {% endif %}
+
+        </ul>
+    </div>
+</section>

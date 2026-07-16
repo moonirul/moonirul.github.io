@@ -1,0 +1,24 @@
+title: "Your Name Portfolio"
+description: "PhD Student in Department of Computer Science @ University of Pisa"
+url: "https://di-unipi.github.io/" # e.g., https://username.github.io
+baseurl: "" # e.g., /portfolio if publishing under a subpath
+
+# Publications section behavior
+publications:
+  show_selected_only: false # if true, show only publications with "selected: true"
+
+markdown: kramdown
+theme: null
+
+plugins:
+  - jekyll-minifier
+
+exclude:
+  - .sass-cache/
+  - .jekyll-cache/
+  - gemfiles/
+  - Gemfile
+  - Gemfile.lock
+  - Makefile
+  - README.md
+  - LICENSE

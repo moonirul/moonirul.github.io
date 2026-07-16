@@ -1,0 +1,43 @@
+education:
+  - title: "BSc in CSE"
+    institution: "Green University of Bangladesh"
+    institution_url: "https://green.edu.bd/"
+    location: "Dhaka, Bangladesh"
+    period: "2022 - 226"
+    description: >
+      Researching about very interesting topics, that only me and my advisor understand.
+
+  # - title: "MSc in Artificial Intelligence and Weird Stuff"
+  #   institution: "University of Neverland"
+  #   institution_url: "https://www.youtube.com/watch?v=4SK1KN6ToNw"
+  #   location: "Never Never, Neverland"
+  #   period: "2021 - 2023"
+  #   description: >
+  #     Graduated with honors. Thesis on deep learning for automated theorem proving.
+
+  # - title: "BSc in Computer Science"
+  #   institution: "University of Atlantis"
+  #   institution_url: "https://it.wikipedia.org/wiki/Atlantis_-_L%27impero_perduto"
+  #   location: "Atlantis, Arctic"
+  #   period: "2018 - 2021"
+  #   description: >
+  #     Graduated with honors. Thesis on distributed systems for underwater basket weaving.
+  #   thesis: "assets/img/me.png"
+
+work:
+  - title: "AI Engineer"
+    institution: "Softvence Agency"
+    institution_url: "https://www.betopia.com/"
+    location: "Bansree, Dhaka"
+    period: "15 April - Present"
+    description: >
+      Worked in the best city of the world.
+    thesis: "https://example.com/phd_thesis.pdf"
+
+  # - title: "Teaching Assistant"
+  #   institution: "University of Pisa"
+  #   institution_url: "https://di.unipi.it/"
+  #   location: "Pisa, Italy"
+  #   period: "2023 - present"
+  #   description: >
+  #     Helping brilliant students and clever graders survive machine learning assignments with dignity.

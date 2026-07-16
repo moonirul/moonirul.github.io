@@ -1,0 +1,234 @@
+{% if site.data.author.photo %}
+{% assign header_class = "flex flex-col sm:flex-row items-center sm:items-start gap-4 p-5 rounded-2xl bg-gradient-to-br from-slate-50 to-white border border-slate-200" %}
+{% else %}
+{% assign header_class = "p-5 rounded-2xl bg-gradient-to-br from-slate-50 to-white border border-slate-200" %}
+{% endif %}
+
+
+<section id="hero">
+
+    <div class="{{ header_class }}">
+
+
+        {% if site.data.author.photo %}
+
+        <div class="relative shrink-0">
+
+            <div class="absolute inset-0 bg-sky-400/20 blur-xl rounded-full"></div>
+
+            <img
+                class="relative w-24 h-24 rounded-full object-cover ring-4 ring-white shadow-md"
+                src="{{ site.data.author.photo | relative_url }}"
+                alt="{{ site.data.author.name }} headshot">
+
+        </div>
+
+        {% endif %}
+
+
+
+
+        <div class="text-center sm:text-left">
+
+
+
+            <h1 class="text-2xl sm:text-3xl font-bold tracking-tight text-slate-900">
+
+                {{ site.data.author.name }}
+
+            </h1>
+
+
+
+
+            <div class="mt-1 text-sm sm:text-base text-slate-600">
+
+
+                {{ site.data.author.role }}
+
+
+                {% if site.data.author.affiliation_url %}
+
+                ·
+
+                <a
+                class="text-sky-700 hover:text-sky-900 transition"
+                href="{{ site.data.author.affiliation_url }}"
+                target="_blank"
+                rel="noopener">
+
+                    {{ site.data.author.affiliation }}
+
+                </a>
+
+
+                {% elsif site.data.author.affiliation %}
+
+                · {{ site.data.author.affiliation }}
+
+                {% endif %}
+
+
+
+
+                {% if site.data.author.location %}
+
+                · {{ site.data.author.location }}
+
+                {% endif %}
+
+
+            </div>
+
+
+
+
+
+            {% if site.data.author.bio %}
+
+            <p class="mt-2 max-w-3xl text-sm text-slate-700 leading-relaxed">
+
+                {{ site.data.author.bio }}
+
+            </p>
+
+            {% endif %}
+
+
+
+
+
+
+
+            <div class="flex flex-wrap justify-center sm:justify-start gap-2 mt-4">
+
+
+
+                {% if site.data.author.website %}
+
+                <a
+                class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-slate-900 text-white text-xs font-medium hover:bg-black transition"
+                href="{{ site.data.author.website }}"
+                target="_blank"
+                rel="noopener">
+
+                    <i class="bi bi-globe2"></i>
+                    Website
+
+                </a>
+
+                {% endif %}
+
+
+
+
+
+
+                {% if site.data.author.email %}
+
+                <a
+                class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-sky-600 text-white text-xs font-medium hover:bg-sky-700 transition"
+                href="mailto:{{ site.data.author.email }}">
+
+                    <i class="bi bi-envelope-fill"></i>
+                    Email
+
+                </a>
+
+                {% endif %}
+
+
+
+
+
+
+                {% if site.data.author.scholar %}
+
+                <a
+                class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-emerald-600 text-white text-xs font-medium hover:bg-emerald-700 transition"
+                href="{{ site.data.author.scholar }}"
+                target="_blank"
+                rel="noopener">
+
+                    <i class="ai ai-google-scholar"></i>
+                    Scholar
+
+                </a>
+
+                {% endif %}
+
+
+
+
+
+
+
+                {% if site.data.author.github %}
+
+                <a
+                class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-slate-800 text-white text-xs font-medium hover:bg-black transition"
+                href="{{ site.data.author.github }}"
+                target="_blank"
+                rel="noopener">
+
+                    <i class="bi bi-github"></i>
+                    GitHub
+
+                </a>
+
+                {% endif %}
+
+
+
+
+
+
+
+                {% if site.data.author.linkedin %}
+
+                <a
+                class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-blue-600 text-white text-xs font-medium hover:bg-blue-700 transition"
+                href="{{ site.data.author.linkedin }}"
+                target="_blank"
+                rel="noopener">
+
+                    <i class="bi bi-linkedin"></i>
+                    LinkedIn
+
+                </a>
+
+                {% endif %}
+
+
+
+
+
+
+
+                {% if site.data.author.orcid %}
+
+                <a
+                class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-green-700 text-white text-xs font-medium hover:bg-green-800 transition"
+                href="{{ site.data.author.orcid }}"
+                target="_blank"
+                rel="noopener">
+
+                    <i class="ai ai-orcid"></i>
+                    ORCID
+
+                </a>
+
+                {% endif %}
+
+
+
+            </div>
+
+
+        </div>
+
+
+    </div>
+
+
+</section>

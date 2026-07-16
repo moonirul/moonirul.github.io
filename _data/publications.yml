@@ -1,0 +1,57 @@
+# Add your publications here.
+# Leave the file empty to hide the section.
+# Fields:
+#  title (req)
+#  authors (req)
+#  venue (req)
+#  year
+#  pdf, doi, code, poster, slides, video, selected (bool)
+# If publications.show_selected_only: true in _config.yml,
+# only those with selected: true will be shown.
+
+# --- Journal article ---
+- title: "An example of Journal Article"
+  authors: "Your Name, Researcher C"
+  venue: "Journal of Artificial Intelligence Research (JAIR)"
+  year: 2024
+  pdf: "https://doi.org/10.1613/jair.9999"
+  doi: "10.1613/jair.9999"
+  code: "https://github.com/yourname/neural-symbolic"
+  selected: true
+
+# --- Conference paper ---
+- title: "A Minimal Example of a Conference Paper"
+  authors: "Your Name, Coauthor A, Coauthor B"
+  venue: "Conference on Minimal Examples (CME)"
+  year: 2025
+  pdf: "https://arxiv.org/pdf/xxxx.xxxxx.pdf"
+  doi: "10.1234/xxxxxx"
+  code: "https://github.com/yourname/project"
+  slides: "https://example.com/slides.pdf"
+  selected: true
+
+# --- Workshop / demo ---
+- title: "A Workshop Paper on Whatever You Want"
+  authors: "Your Name, D. Collaborator"
+  venue: "NeurIPS Workshop on Machine Reasoning"
+  year: 2023
+  poster: "https://example.com/poster.pdf"
+  video: "https://youtu.be/example"
+  selected: false
+
+# --- Technical report / preprint ---
+- title: "Pre-print on Your Preliminary Research"
+  authors: "Your Name"
+  venue: "arXiv preprint arXiv:2401.12345"
+  year: 2024
+  pdf: "https://arxiv.org/pdf/2401.12345.pdf"
+  code: "https://github.com/yourname/prob-logic"
+  selected: false
+
+# --- Thesis / dissertation ---
+- title: "Finally Your PhD Thesis"
+  authors: "Your Name"
+  venue: "PhD Thesis, University of Pisa"
+  year: 2026
+  pdf: "https://example.com/thesis.pdf"
+  selected: true

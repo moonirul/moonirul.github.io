@@ -1,0 +1,96 @@
+
+skills:
+  - category: Languages
+    icon: bi-code-slash
+    items:
+      - name: Python
+        logo: python
+      - name: JavaScript (ES6+)
+        logo: javascript
+      - name: C
+        logo: c
+      - name: SQL
+        logo: mysql
+      - name: HTML5
+        logo: html5
+      - name: CSS3
+        logo: css3
+
+  - category: Backend
+    icon: bi-server
+    items:
+      - name: FastAPI
+        logo: fastapi
+      - name: REST APIs
+        logo: api
+
+  - category: Frontend
+    icon: bi-window
+    items:
+      - name: React
+        logo: react
+      - name: Tailwind CSS
+        logo: tailwindcss
+      - name: Firebase
+        logo: firebase
+
+  - category: AI / Machine Learning
+    icon: bi-cpu
+    items:
+      - name: TensorFlow
+        logo: tensorflow
+      - name: Keras
+        logo: keras
+      - name: Scikit-learn
+        logo: sklearn
+      - name: OpenCV
+        logo: opencv
+
+
+  - category: Cloud / DevOps
+    icon: bi-cloud-fill
+    items:
+      - name: Render
+        logo: render
+      - name: Vercel
+        logo: vercel
+      - name: Netlify
+        logo: netlify
+
+
+  - category: Tools
+    icon: bi-tools
+    items:
+      - name: Git
+        logo: git
+      - name: GitHub
+        logo: github
+      - name: OpenCV
+        logo: opencv
+      - name: Pandas
+        logo: pandas
+      - name: NumPy
+        logo: numpy
+      - name: Matplotlib
+        logo: matplotlib
+      - name: Google Colab
+        logo: googlecolab
+      - name: Kaggle
+        logo: kaggle
+
+
+  - category: Miscellaneous
+    icon: bi-stars
+    items:
+      - name: Academic Research
+        logo: ""
+      - name: Teaching
+        logo: ""
+      - name: Training
+        logo: ""
+      - name: Consultation
+        logo: ""
+      - name: LaTeX Typesetting
+        logo: ""
+      - name: Academic Publishing
+        logo: ""

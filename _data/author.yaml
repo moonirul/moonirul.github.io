@@ -1,0 +1,28 @@
+name: "Md. Monirul Islam"
+role: "CSE Graduate"
+email: "monirrul.cse@gmail.com"
+phone: "+880 1742 958888"
+address:
+  street: "Road-4"
+  city: Dhaka
+  region: Mirpur
+  postcode: "1216"
+  country: Bangladesh
+  country_code: BD
+directions: Department of Computer Science
+room: Room YYY
+
+affiliation: "Department of Computer Science, Green University of Bangladesh"
+affiliation_url: "https://green.edu.bd/"
+# Short bio here (1-3 sentences). Research areas, advisor (optional), lab group, and interests.
+bio: >
+  CSE graduate with strong interest in AI and Machine Learning. Skilled in building AI applications, working with LLM APIs, and creating simple RAG systems. Comfortable with Python, FastAPI, and basic web development. I want to use my skills to build smart and scalable AI solutions while learning and growing with a team.
+
+photo: "/assets/img/me.png" # e.g., /assets/img/me.jpg — leave empty to hide the propic automatically
+# Optional links (leave any blank to hide)
+website: ""
+scholar: "" # e.g., https://scholar.google.com/citations?user=XXXX
+orcid: "" # e.g., https://orcid.org/0000-0000-0000-0000
+github: ""
+twitter: ""
+linkedin: ""
