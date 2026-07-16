@@ -1,11 +1,14 @@
 education:
-  - title: "BSc in CSE"
+  - title: "B.Sc. in Computer Science & Engineering"
     institution: "Green University of Bangladesh"
     institution_url: "https://green.edu.bd/"
-    location: "Dhaka, Bangladesh"
-    period: "2022 - 226"
+    location: "Purbachal, Narayanganj, Bangladesh"
+    period: "Feb 2022 – Feb 2026"
     description: >
-      Researching about very interesting topics, that only me and my advisor understand.
+      Undergraduate studies in Computer Science and Engineering, with research
+      interests in Artificial Intelligence, Machine Learning, and Computer Vision.
+      Completed an undergraduate thesis on computer vision-based real-time air
+      quality index estimation from ground-level images.
 
   # - title: "MSc in Artificial Intelligence and Weird Stuff"
   #   institution: "University of Neverland"
@@ -25,14 +28,14 @@ education:
   #   thesis: "assets/img/me.png"
 
 work:
-  - title: "AI Engineer"
-    institution: "Softvence Agency"
+  - title: "AI Automation Engineer"
+    institution: "Softvence Delta"
     institution_url: "https://www.betopia.com/"
-    location: "Bansree, Dhaka"
-    period: "15 April - Present"
+    location: "Banasree, Dhaka, Bangladesh"
+    period: "Apr 2026 – Present"
     description: >
-      Worked in the best city of the world.
-    thesis: "https://example.com/phd_thesis.pdf"
+      Developing AI-powered automation systems, LLM applications, and workflow
+      orchestration using FastAPI, LangChain, LangGraph, OpenAI APIs, and n8n.
 
   # - title: "Teaching Assistant"
   #   institution: "University of Pisa"

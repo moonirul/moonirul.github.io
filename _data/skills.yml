@@ -1,4 +1,3 @@
-
 skills:
   - category: Languages
     icon: bi-code-slash
@@ -83,14 +82,19 @@ skills:
     icon: bi-stars
     items:
       - name: Academic Research
-        logo: ""
+        logo: readthedocs
+
       - name: Teaching
-        logo: ""
+        logo: googleclassroom
+
       - name: Training
-        logo: ""
+        logo: coursera
+
       - name: Consultation
-        logo: ""
+        logo: handshake
+
       - name: LaTeX Typesetting
-        logo: ""
+        logo: latex
+
       - name: Academic Publishing
-        logo: ""
+        logo: elsevier
