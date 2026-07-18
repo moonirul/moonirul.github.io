@@ -32,156 +32,308 @@
       :root {
         --sidebar-green: #080ce3cd;
         --sidebar-green-dark: #3e9c7c;
+
+        /* Border settings */
+        --frame-size: 32px;
+        --frame-color: #ffffff;
       }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html,
+      body {
+        margin: 0;
+        padding: 0;
+        height: 100%;
+      }
+
+      body {
+        overflow: hidden; /* IMPORTANT */
+      }
+
+      /* =====================================================
+     FIXED BORDER (DOES NOT SCROLL)
+     ===================================================== */
+
+      body::before {
+        content: "";
+        position: fixed;
+        inset: 0;
+        pointer-events: none;
+        z-index: 9999;
+
+        border-top: 32px solid #ffffff;
+        border-right: 128px solid #1010d4;
+        border-bottom: 32px solid #ffffff;
+        border-left: 36px solid #ffffff;
+      }
+
+      /* Push the website inside the border */
+
+      .page-wrapper {
+        margin: 32px;
+        height: calc(100vh - 64px);
+      }
+
+      /* Sidebar */
+
+      aside {
+        height: calc(100vh - 64px);
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
+      }
+
+      .sidebar-header {
+        flex: 0 0 auto;
+        padding: 40px 30px 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        background: var(--sidebar-green);
+      }
+
+      .sidebar-scroll {
+        flex: 1;
+        overflow-y: auto;
+        overflow-x: hidden;
+        padding: 25px 30px 35px;
+
+        scrollbar-width: thin;
+        scrollbar-color: rgba(255, 255, 255, 0.35) transparent;
+      }
+      .sidebar-scroll::-webkit-scrollbar {
+        width: 6px;
+      }
+
+      .sidebar-scroll::-webkit-scrollbar-track {
+        background: transparent;
+      }
+
+      .sidebar-scroll::-webkit-scrollbar-thumb {
+        background: rgba(255, 255, 255, 0.35);
+        border-radius: 100px;
+      }
+
+      .sidebar-scroll::-webkit-scrollbar-thumb:hover {
+        background: rgba(255, 255, 255, 0.55);
+      }
+
+      .sidebar-scroll::-webkit-scrollbar-thumb {
+        background: rgba(255, 255, 255, 0.25);
+        border-radius: 20px;
+      }
+
       .nav-link.active {
-        color: #ffffff;
+        color: #fff;
         font-weight: 600;
-        background-color: rgba(255, 255, 255, 0.14);
+        background: rgba(255, 255, 255, 0.14);
       }
+
+      #main-content {
+        height: calc(100vh - 64px);
+        overflow-y: auto;
+        overflow-x: hidden;
+      }
+
+      /* No default hiding — every section is visible on initial
+         load. JS below switches to single-section view only
+         after a nav link is clicked. */
     </style>
   </head>
 
   <body class="bg-slate-50 text-slate-900 antialiased">
-    <div class="lg:flex">
-      <!-- LEFT PROFILE SIDEBAR -->
+    <div class="page-wrapper">
+      <div class="lg:flex h-full">
+        <!-- LEFT PROFILE SIDEBAR -->
 
-      <!-- LEFT PROFILE SIDEBAR -->
-<aside
-  class="lg:w-[450px] lg:shrink-0 lg:h-screen lg:sticky lg:top-0 text-white flex flex-col"
-  style="background-color: var(--sidebar-green)"
->
-  <div class="flex-1 flex flex-col items-center justify-center px-6 py-8 text-center">
-
-    <!-- Name (mobile) -->
-    <h1 class="text-lg font-bold lg:hidden mb-4">
-      {{ site.data.author.name }}
-    </h1>
-
-    <!-- Avatar -->
-    {% if site.data.author.photo %}
-    <img
-      src="{{ site.data.author.photo | relative_url }}"
-      alt="{{ site.data.author.name }}"
-      class="w-36 h-36 rounded-full object-cover ring-4 ring-white/30"
-    />
-    {% else %}
-    <div
-      class="w-36 h-36 rounded-full bg-white/20 ring-4 ring-white/30 flex items-center justify-center"
-    >
-      <i class="bi bi-person-fill text-6xl text-white/70"></i>
-    </div>
-    {% endif %}
-
-    <!-- Name (desktop) -->
-    <h1 class="hidden lg:block mt-6 text-xl font-bold leading-tight">
-      {{ site.data.author.name }}
-    </h1>
-
-    <!-- Welcome blurb -->
-    {% if site.data.author.tagline %}
-    <p class="mt-4 text-sm leading-relaxed text-white/80 max-w-[220px]">
-      {{ site.data.author.tagline }}
-    </p>
-    {% endif %}
-
-    <!-- Social icons -->
-    <div class="flex flex-wrap justify-center items-center gap-3 mt-6">
-
-      {% if site.data.author.website %}
-      <a href="{{ site.data.author.website }}" target="_blank"
-        class="w-9 h-9 flex items-center justify-center rounded-full bg-white/15 hover:bg-white/30 transition">
-        <i class="bi bi-link-45deg text-base"></i>
-      </a>
-      {% endif %}
-
-      {% if site.data.author.github %}
-      <a href="{{ site.data.author.github }}" target="_blank"
-        class="w-9 h-9 flex items-center justify-center rounded-full bg-white/15 hover:bg-white/30 transition">
-        <i class="bi bi-github text-base"></i>
-      </a>
-      {% endif %}
-
-      {% if site.data.author.linkedin %}
-      <a href="{{ site.data.author.linkedin }}" target="_blank"
-        class="w-9 h-9 flex items-center justify-center rounded-full bg-white/15 hover:bg-white/30 transition">
-        <i class="bi bi-linkedin text-base"></i>
-      </a>
-      {% endif %}
-
-      {% if site.data.author.email %}
-      <a href="mailto:{{ site.data.author.email }}"
-        class="w-9 h-9 flex items-center justify-center rounded-full bg-white/15 hover:bg-white/30 transition">
-        <i class="bi bi-envelope text-base"></i>
-      </a>
-      {% endif %}
-
-    </div>
-
-
-    <!-- Navigation -->
-    <nav class="mt-8 w-full space-y-1 text-left">
-
-      <a href="#hero"
-        class="nav-link flex items-center gap-3 px-3 py-2 rounded-lg text-white/85 hover:bg-white/15 hover:text-white transition">
-        <i class="bi bi-person text-base w-5 text-center"></i>
-        <span class="text-sm">About Me</span>
-      </a>
-
-      <a href="#experience"
-        class="nav-link flex items-center gap-3 px-3 py-2 rounded-lg text-white/85 hover:bg-white/15 hover:text-white transition">
-        <i class="bi bi-grid text-base w-5 text-center"></i>
-        <span class="text-sm">Experience</span>
-      </a>
-
-      <a href="#skills"
-        class="nav-link flex items-center gap-3 px-3 py-2 rounded-lg text-white/85 hover:bg-white/15 hover:text-white transition">
-        <i class="bi bi-briefcase text-base w-5 text-center"></i>
-        <span class="text-sm">Technical Skills</span>
-      </a>
-
-      <a href="#resume"
-        class="nav-link flex items-center gap-3 px-3 py-2 rounded-lg text-white/85 hover:bg-white/15 hover:text-white transition">
-        <i class="bi bi-file-earmark-text text-base w-5 text-center"></i>
-        <span class="text-sm">Resume</span>
-      </a>
-
-      <a href="#publications"
-        class="nav-link flex items-center gap-3 px-3 py-2 rounded-lg text-white/85 hover:bg-white/15 hover:text-white transition">
-        <i class="bi bi-chat-square-text text-base w-5 text-center"></i>
-        <span class="text-sm">Publications</span>
-      </a>
-
-    </nav>
-
-
-    <!-- Hire Me -->
-    <a href="#contact"
-      class="mt-6 w-full flex items-center justify-center gap-2 rounded-lg bg-slate-900/90 hover:bg-slate-900 text-white text-sm font-medium py-2.5 transition">
-      <i class="bi bi-send"></i>
-      Hire Me
-    </a>
-
-  </div>
-</aside>
-    
-
-      <!-- MAIN CONTENT -->
-
-      <main id="main-content" class="flex-1 min-w-0">
-        <div
-          class="mx-auto max-w-8xl pl-6 sm:pl-10 lg:pl-14 xl:pl-20 pr-6 sm:pr-10 lg:pr-14 xl:pr-48 py-14 sm:py-16"
+        <aside
+          class="lg:w-[450px] text-white"
+          style="background-color: var(--sidebar-green)"
         >
-          {{ content }}
-        </div>
+          <!-- Fixed Top -->
+          <div class="sidebar-header">
+            {% if site.data.author.photo %}
+            <img
+              src="{{ site.data.author.photo | relative_url }}"
+              alt="{{ site.data.author.name }}"
+              class="w-36 h-36 rounded-full object-cover ring-4 ring-white/30"
+            />
+            {% endif %}
 
-        <footer class="border-t border-slate-200 dark:border-slate-800 mt-16">
-          <div class="mx-auto max-w-6xl px-6 sm:px-10 lg:px-14 xl:px-20 py-8">
-            <p class="text-center text-sm text-slate-500 dark:text-slate-400">
-              © {{ site.time | date: '%Y' }} {{ site.title }}
+            <h1 class="mt-6 text-xl font-bold">{{ site.data.author.name }}</h1>
+
+            {% if site.data.author.tagline %}
+            <p class="mt-4 text-sm text-white/80 max-w-[220px]">
+              {{ site.data.author.tagline }}
             </p>
+            {% endif %}
+
+            <!-- Social -->
+
+            <div class="flex flex-wrap justify-center items-center gap-3 mt-6">
+              {% if site.data.author.website %}
+              <a
+                href="{{ site.data.author.website }}"
+                target="_blank"
+                class="w-9 h-9 flex items-center justify-center rounded-full bg-white/15 hover:bg-white/30 transition"
+              >
+                <i class="bi bi-link-45deg text-base"></i>
+              </a>
+              {% endif %} {% if site.data.author.github %}
+              <a
+                href="{{ site.data.author.github }}"
+                target="_blank"
+                class="w-9 h-9 flex items-center justify-center rounded-full bg-white/15 hover:bg-white/30 transition"
+              >
+                <i class="bi bi-github text-base"></i>
+              </a>
+              {% endif %} {% if site.data.author.linkedin %}
+              <a
+                href="{{ site.data.author.linkedin }}"
+                target="_blank"
+                class="w-9 h-9 flex items-center justify-center rounded-full bg-white/15 hover:bg-white/30 transition"
+              >
+                <i class="bi bi-linkedin text-base"></i>
+              </a>
+              {% endif %} {% if site.data.author.email %}
+              <a
+                href="mailto:{{ site.data.author.email }}"
+                class="w-9 h-9 flex items-center justify-center rounded-full bg-white/15 hover:bg-white/30 transition"
+              >
+                <i class="bi bi-envelope text-base"></i>
+              </a>
+              {% endif %}
+            </div>
           </div>
-        </footer>
-      </main>
+
+          <!-- Scrollable Part -->
+          <div class="sidebar-scroll">
+            <nav class="mt-8 w-full space-y-1" id="side-nav">
+              <a
+                href="#hero"
+                class="nav-link flex items-center gap-3 px-3 py-2 rounded-lg text-white/85 hover:bg-white/15 hover:text-white transition"
+              >
+                <i class="bi bi-person w-5 text-center"></i>
+                <span class="text-sm">About Me</span>
+              </a>
+
+              <a
+                href="#experience"
+                class="nav-link flex items-center gap-3 px-3 py-2 rounded-lg text-white/85 hover:bg-white/15 hover:text-white transition"
+              >
+                <i class="bi bi-grid w-5 text-center"></i>
+                <span class="text-sm">Experience</span>
+              </a>
+
+              <a
+                href="#skills"
+                class="nav-link flex items-center gap-3 px-3 py-2 rounded-lg text-white/85 hover:bg-white/15 hover:text-white transition"
+              >
+                <i class="bi bi-briefcase w-5 text-center"></i>
+                <span class="text-sm">Technical Skills</span>
+              </a>
+
+              <a
+                href="#publications"
+                class="nav-link flex items-center gap-3 px-3 py-2 rounded-lg text-white/85 hover:bg-white/15 hover:text-white transition"
+              >
+                <i class="bi bi-chat-square-text w-5 text-center"></i>
+                <span class="text-sm">Publications</span>
+              </a>
+              
+
+
+
+            </nav>
+
+            <a
+              href="#contact"
+              id="hire-me-link"
+              class="mt-8 w-full flex items-center justify-center rounded-lg bg-slate-900 hover:bg-slate-800 transition py-3 font-medium"
+            >
+              <i class="bi bi-send mr-2"></i>
+              Hire Me
+            </a>
+          </div>
+        </aside>
+
+        <!-- MAIN CONTENT -->
+        <main id="main-content" class="flex-1 min-w-0">
+          <div
+            class="mx-auto max-w-8xl pl-6 sm:pl-10 lg:pl-14 xl:pl-20 pr-6 sm:pr-10 lg:pr-14 xl:pr-48 py-14 sm:py-16"
+          >
+            {{ content }}
+          </div>
+
+          <footer class="border-t border-slate-200 mt-16">
+            <div class="mx-auto max-w-6xl px-6 sm:px-10 lg:px-14 xl:px-20 py-8">
+              <p class="text-center text-sm text-slate-500">
+                © {{ site.time | date: '%Y' }} {{ site.title }}
+              </p>
+            </div>
+          </footer>
+        </main>
+      </div>
     </div>
+
+    <script>
+      (function () {
+        var mainContent = document.getElementById("main-content");
+        var navLinks = document.querySelectorAll(".nav-link");
+        var hireMeLink = document.getElementById("hire-me-link");
+
+        // Combine sidebar nav links + the Hire Me button into one
+        // list, so Hire Me is treated exactly like every other
+        // nav item instead of being a bolted-on special case.
+        var allLinks = Array.prototype.slice.call(navLinks);
+        if (hireMeLink) allLinks.push(hireMeLink);
+
+        // Collect the actual section elements referenced by any link.
+        var sections = allLinks
+          .map(function (link) {
+            var id = link.getAttribute("href").slice(1);
+            return document.getElementById(id);
+          })
+          .filter(Boolean);
+
+        function showSection(id) {
+          sections.forEach(function (section) {
+            section.style.display = section.id === id ? "block" : "none";
+          });
+          allLinks.forEach(function (link) {
+            link.classList.toggle(
+              "active",
+              link.getAttribute("href") === "#" + id,
+            );
+          });
+          mainContent.scrollTo({ top: 0, behavior: "smooth" });
+        }
+
+        allLinks.forEach(function (link) {
+          link.addEventListener("click", function (e) {
+            var targetId = link.getAttribute("href").slice(1);
+            var target = document.getElementById(targetId);
+            if (!target) {
+              console.warn(
+                'No element found with id="' + targetId + '" for this link.',
+              );
+              return;
+            }
+            e.preventDefault();
+            showSection(targetId);
+          });
+        });
+
+        // Root URL / default load: show everything (no section hidden).
+        // We do NOT call showSection() here on purpose, so all
+        // sections stay visible until the user actually clicks a
+        // nav link (including Hire Me).
+      })();
+    </script>
   </body>
 </html>
