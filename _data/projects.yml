@@ -1,0 +1,76 @@
+- title: "AI-Powered Podcast & WordPress Content Automation"
+
+  type: "AI Automation"
+
+  image: "assets/img/projects/automation.png"
+
+
+  description: >
+    An AI automation system that converts podcast videos and WordPress blogs
+    into transcripts, marketing content, and social media assets using n8n,
+    Whisper AI, and OpenAI GPT.
+
+
+  results: >
+    Reduced manual content repurposing effort by automating transcription,
+    content generation, and review workflows.
+
+
+  tech:
+    - Python
+    - FastAPI
+    - OpenAI GPT
+    - Whisper AI
+    - n8n
+    - Docker
+    - WordPress API
+
+
+  github: "https://github.com/moonirul/AI-Powered-Podcast-WordPress-Content-Automation"
+
+  demo: ""
+
+  paper: ""
+
+  video: "assets/Videos/Workflow-Video.mp4"
+
+  featured: true
+
+- title: "AI-Powered Podcast & WordPress Content Automation"
+
+  type: "AI Automation"
+
+  image: "assets/img/projects/automation.png"
+
+
+  description: >
+    An AI automation system that converts podcast videos and WordPress blogs
+    into transcripts, marketing content, and social media assets using n8n,
+    Whisper AI, and OpenAI GPT.
+
+
+  results: >
+    Reduced manual content repurposing effort by automating transcription,
+    content generation, and review workflows.
+
+
+  tech:
+    - Python
+    - FastAPI
+    - OpenAI GPT
+    - Whisper AI
+    - n8n
+    - Docker
+    - WordPress API
+
+
+  github: "https://github.com/moonirul/AI-Powered-Podcast-WordPress-Content-Automation"
+
+  demo: ""
+
+  paper: ""
+
+  video: "assets/Videos/Workflow-Video.mp4"
+
+  featured: true
+

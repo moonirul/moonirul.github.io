@@ -1,0 +1,147 @@
+{% assign items = site.data.projects | default: [] %}
+
+{% if site.projects.show_featured_only %}
+{% assign items = items | where: "featured", true %}
+{% endif %}
+
+
+{% if items.size > 0 %}
+
+<section id="projects" class="py-12 border-b border-slate-100">
+
+<h2 class="text-3xl font-bold text-slate-900 mb-10">
+    Selected Projects
+</h2>
+
+
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+
+
+{% for p in items %}
+
+<article class="group rounded-3xl overflow-hidden bg-white border border-slate-200 hover:shadow-xl transition duration-300">
+
+
+{% if p.image %}
+
+<div class="relative h-60 overflow-hidden bg-slate-100">
+
+<img
+src="{{p.image}}"
+alt="{{p.title}}"
+class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+
+
+{% if p.type %}
+<span class="absolute top-4 left-4 px-3 py-1 rounded-full bg-white/90 text-xs font-semibold text-indigo-700">
+{{p.type}}
+</span>
+{% endif %}
+
+
+</div>
+
+{% endif %}
+
+
+
+<div class="p-6">
+
+
+<h3 class="text-xl font-bold text-slate-900">
+{{p.title}}
+</h3>
+
+
+
+<p class="mt-3 text-sm leading-6 text-slate-600">
+{{p.description}}
+</p>
+
+
+
+
+{% if p.results %}
+
+<div class="mt-4 px-4 py-3 rounded-xl bg-emerald-50 text-emerald-700 text-sm">
+
+<i class="bi bi-graph-up-arrow"></i>
+
+{{p.results}}
+
+</div>
+
+{% endif %}
+
+
+
+
+{% if p.tech %}
+
+<div class="flex flex-wrap gap-2 mt-5">
+
+{% for tech in p.tech %}
+
+<span class="px-3 py-1 rounded-full bg-slate-100 text-slate-700 text-xs font-medium">
+
+{{tech}}
+
+</span>
+
+{% endfor %}
+
+</div>
+
+{% endif %}
+
+
+
+
+<div class="flex gap-3 mt-6">
+
+
+{% if p.github %}
+
+<a href="{{p.github}}" target="_blank"
+class="px-4 py-2 rounded-full bg-slate-900 text-white text-sm">
+
+<i class="bi bi-github"></i>
+Code
+
+</a>
+
+{% endif %}
+
+
+
+{% if p.video %}
+
+<a href="{{p.video}}" target="_blank"
+class="px-4 py-2 rounded-full bg-red-600 text-white text-sm">
+
+<i class="bi bi-play-circle"></i>
+Video
+
+</a>
+
+{% endif %}
+
+
+
+</div>
+
+
+</div>
+
+
+</article>
+
+
+{% endfor %}
+
+
+</div>
+
+</section>
+
+{% endif %}

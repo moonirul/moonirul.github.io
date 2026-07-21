@@ -30,7 +30,7 @@
 
     <style>
       :root {
-        --sidebar-green: #080ce3cd;
+        --sidebar-green: #1f2277cd;
         --sidebar-green-dark: #3e9c7c;
 
         /* Border settings */
@@ -259,50 +259,59 @@
           <!-- Scrollable Part -->
           <div class="sidebar-scroll">
             <nav class="mt-8 w-full space-y-1" id="side-nav">
-              <a
-                href="#hero"
+              <a href="#hero"
                 class="nav-link flex items-center gap-3 px-3 py-2 rounded-lg text-white/85 hover:bg-white/15 hover:text-white transition"
               >
                 <i class="bi bi-person w-5 text-center"></i>
                 <span class="text-sm">About Me</span>
               </a>
 
-              <a
-                href="#experience"
+              <a href="#experience"
                 class="nav-link flex items-center gap-3 px-3 py-2 rounded-lg text-white/85 hover:bg-white/15 hover:text-white transition"
               >
                 <i class="bi bi-grid w-5 text-center"></i>
                 <span class="text-sm">Experience</span>
               </a>
 
-              <a
-                href="#skills"
+              <a href="#skills"
                 class="nav-link flex items-center gap-3 px-3 py-2 rounded-lg text-white/85 hover:bg-white/15 hover:text-white transition"
               >
                 <i class="bi bi-briefcase w-5 text-center"></i>
                 <span class="text-sm">Technical Skills</span>
               </a>
 
-              <a
-                href="#publications"
+               <a href="#projects"
+                class="nav-link flex items-center gap-3 px-3 py-2 rounded-lg text-white/85 hover:bg-white/15 hover:text-white transition"
+              >
+                <i class="bi bi-chat-square-text w-5 text-center"></i>
+                <span class="text-sm">Projects</span>
+              </a>
+
+              <a href="#publications"
                 class="nav-link flex items-center gap-3 px-3 py-2 rounded-lg text-white/85 hover:bg-white/15 hover:text-white transition"
               >
                 <i class="bi bi-chat-square-text w-5 text-center"></i>
                 <span class="text-sm">Publications</span>
               </a>
 
-              <a
-                href="{{ '/assets/files/Monirul.pdf' | relative_url }}"
+              <a href="{{ '/assets/files/Monirul.pdf' | relative_url }}"
                 target="_blank"
                 class="nav-link flex items-center gap-3 px-3 py-2 rounded-lg text-white/85 hover:bg-white/15 hover:text-white transition"
               >
                 <i class="bi bi-file-earmark-pdf w-5 text-center"></i>
                 <span class="text-sm">Resume</span>
               </a>
+
+              <a href="#contact"
+                class="nav-link flex items-center gap-3 px-3 py-2 rounded-lg text-white/85 hover:bg-white/15 hover:text-white transition"
+              >
+                <i class="bi bi-file-earmark-pdf w-5 text-center"></i>
+                <span class="text-sm">Contact</span>
+              </a>
             </nav>
 
             <a
-              href="#contact"
+ href="#contact"
               id="hire-me-link"
               class="mt-8 w-full flex items-center justify-center rounded-lg bg-slate-900 hover:bg-slate-800 transition py-3 font-medium"
             >
