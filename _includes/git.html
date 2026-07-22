@@ -1,18 +1,13 @@
 <!-- ===================== GITHUB CONTRIBUTION GRAPH ===================== -->
 <section id="github">
-
   <div class="flex items-center justify-between mb-5">
-
     <div>
-      <h2 class="text-2xl font-bold">
-        GitHub Contributions
-      </h2>
+      <h2 class="text-2xl font-bold">GitHub Contributions</h2>
 
       <p class="text-sm text-slate-500 mt-1">
-        A visual snapshot of my coding activity — each green square represents a day of learning, building, and pushing code. Consistency over perfection 💻
+        My coding activity and contribution history on GitHub
       </p>
     </div>
-
 
     <a
       href="https://github.com/moonirul"
@@ -23,48 +18,39 @@
       View GitHub
       <i class="bi bi-arrow-up-right"></i>
     </a>
-
   </div>
 
-
-
-  <div class="bg-white rounded-2xl p-5 border border-slate-200 shadow-sm overflow-hidden">
-
-
-    <!-- Year Filter -->
+  <div
+    class="bg-white rounded-2xl p-5 border border-slate-200 shadow-sm overflow-hidden"
+  >
+    <!-- YEAR FILTER -->
 
     <div class="flex flex-wrap gap-2 mb-6">
-
-
       <button
         onclick="loadGithubCalendar(2026)"
-        class="year-btn px-4 py-2 rounded-lg bg-green-600 text-white text-sm">
+        class="px-4 py-2 rounded-lg bg-green-600 text-white text-sm"
+      >
         2026
       </button>
 
-
       <button
         onclick="loadGithubCalendar(2025)"
-        class="year-btn px-4 py-2 rounded-lg bg-slate-100 text-sm">
+        class="px-4 py-2 rounded-lg bg-slate-100 hover:bg-slate-200 text-sm"
+      >
         2025
       </button>
 
-
       <button
         onclick="loadGithubCalendar(2024)"
-        class="year-btn px-4 py-2 rounded-lg bg-slate-100 text-sm">
+        class="px-4 py-2 rounded-lg bg-slate-100 hover:bg-slate-200 text-sm"
+      >
         2024
       </button>
-
-
     </div>
 
-
-
-    <!-- Month -->
+    <!-- MONTH LABEL -->
 
     <div class="grid grid-cols-12 text-xs text-slate-400 mb-3">
-
       <span>Jan</span>
       <span>Feb</span>
       <span>Mar</span>
@@ -77,107 +63,54 @@
       <span>Oct</span>
       <span>Nov</span>
       <span>Dec</span>
-
     </div>
 
+    <!-- CONTRIBUTION GRAPH -->
 
+    <div id="github-calendar" class="flex gap-1 overflow-x-auto pb-2"></div>
 
-    <!-- Calendar -->
+    <!-- SUMMARY -->
 
-    <div
-      id="github-calendar"
-      class="flex flex-wrap gap-1">
-    </div>
-
-
-
-    <!-- Stats -->
-
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mt-6">
-
-
+    <div class="mt-6 grid grid-cols-1 md:grid-cols-3 gap-4">
       <div class="bg-green-50 rounded-xl p-4">
-
-        <p class="text-sm text-slate-500">
-          Total in
-          <span id="github-year">
-            2026
-          </span>
-        </p>
+        <p class="text-sm text-slate-500">Total Contributions</p>
 
         <h3 class="text-2xl font-bold text-green-700">
-
-          <span id="github-total">
-            0
-          </span>
-
+          <span id="github-total"> 0 </span>
         </h3>
-
-        <p class="text-sm">
-          contributions
-        </p>
-
       </div>
-
-
 
       <div class="bg-blue-50 rounded-xl p-4">
+        <p class="text-sm text-slate-500">Viewing Year</p>
 
-        <p class="text-sm text-slate-500">
-          Status
-        </p>
-
-        <h3 class="text-2xl font-bold text-blue-700">
-          Active
-        </h3>
-
+        <h3 id="view-year" class="text-2xl font-bold text-blue-700">2026</h3>
       </div>
-
-
 
       <div class="bg-purple-50 rounded-xl p-4">
+        <p class="text-sm text-slate-500">Contribution Status</p>
 
-        <p class="text-sm text-slate-500">
-          Viewing
-        </p>
-
-        <h3
-          id="view-year"
-          class="text-2xl font-bold text-purple-700">
-          2026
-        </h3>
-
+        <h3 class="text-2xl font-bold text-purple-700">Active</h3>
       </div>
-
-
     </div>
 
+    <!-- LEGEND -->
 
-
-    <!-- Legend -->
-
-    <div class="flex justify-end items-center gap-2 mt-5 text-xs text-slate-500">
-
-      <span>
-        Less
-      </span>
+    <div
+      class="flex justify-end items-center gap-2 mt-5 text-xs text-slate-500"
+    >
+      <span> Less </span>
 
       <span class="w-3 h-3 rounded-sm bg-[#ebedf0]"></span>
+
       <span class="w-3 h-3 rounded-sm bg-[#9be9a8]"></span>
+
       <span class="w-3 h-3 rounded-sm bg-[#40c463]"></span>
+
       <span class="w-3 h-3 rounded-sm bg-[#216e39]"></span>
 
-      <span>
-        More
-      </span>
-
+      <span> More </span>
     </div>
-
-
   </div>
-
-
 </section>
-
 
 <script src="./github-calendar.js"></script>
