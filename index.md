@@ -7,4 +7,5 @@ layout: default
 {% include skills.html %}
 {% include projects.html %}
 {% include publications.html %}
+{% include resume.html %}
 {% include contact.html %}
