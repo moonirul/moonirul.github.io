@@ -47,6 +47,10 @@
         --heading: #172554;
       }
 
+      .section-hidden {
+        display: none !important;
+      }
+
       * {
         box-sizing: border-box;
       }
@@ -391,6 +395,7 @@
     </div>
 
     <!-- Active nav + smooth scroll -->
+    <!-- Active nav + section switching -->
     <script>
       (function () {
         const mainContent = document.getElementById("main-content");
@@ -406,7 +411,6 @@
         }
 
         const sections = allLinks
-
           .map((link) => {
             const href = link.getAttribute("href");
 
@@ -416,7 +420,6 @@
 
             return document.getElementById(href.substring(1));
           })
-
           .filter(Boolean);
 
         function isDesktop() {
@@ -430,7 +433,6 @@
             if (target) {
               target.scrollIntoView({
                 behavior: "smooth",
-
                 block: "start",
               });
             }
@@ -439,13 +441,12 @@
           }
 
           sections.forEach((section) => {
-            section.style.display = section.id === id ? "block" : "none";
+            section.classList.toggle("section-hidden", section.id !== id);
           });
 
           allLinks.forEach((link) => {
             link.classList.toggle(
               "active",
-
               link.getAttribute("href") === "#" + id,
             );
           });
@@ -453,57 +454,59 @@
           if (mainContent) {
             mainContent.scrollTo({
               top: 0,
-
               behavior: "smooth",
             });
           }
         }
 
         allLinks.forEach((link) => {
-          link.addEventListener(
-            "click",
+          link.addEventListener("click", function (e) {
+            const href = this.getAttribute("href");
 
-            function (e) {
-              const href = this.getAttribute("href");
+            if (!href || !href.startsWith("#")) {
+              return;
+            }
 
-              if (!href || !href.startsWith("#")) {
-                return;
-              }
+            const id = href.substring(1);
 
-              const id = href.substring(1);
+            const target = document.getElementById(id);
 
-              const target = document.getElementById(id);
+            if (!target) {
+              return;
+            }
 
-              if (!target) {
-                return;
-              }
+            e.preventDefault();
 
-              e.preventDefault();
-
-              showSection(id);
-            },
-          );
+            showSection(id);
+          });
         });
+
+        function showAllSections() {
+          sections.forEach((section) => {
+            section.classList.remove("section-hidden");
+          });
+
+          allLinks.forEach((link) => {
+            link.classList.remove("active");
+          });
+        }
 
         function resetLayout() {
           if (!isDesktop()) {
             sections.forEach((section) => {
-              section.style.display = "";
+              section.classList.remove("section-hidden");
             });
 
-            allLinks.forEach((link) => {
-              link.classList.remove("active");
-            });
+            return;
           }
+
+          // page load এ সব section দেখাবে
+          showAllSections();
         }
 
         resetLayout();
 
-        window.addEventListener(
-          "resize",
-
-          resetLayout,
-        );
+        window.addEventListener("resize", resetLayout);
       })();
     </script>
   </body>
