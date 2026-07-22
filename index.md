@@ -11,4 +11,5 @@ layout: default
 {% include publications.html %}
 {% include teaching.html %}
 {% include resume.html %}
+{% include git.html %}
 {% include contact.html %}

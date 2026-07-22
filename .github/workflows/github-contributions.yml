@@ -1,0 +1,49 @@
+name: Update GitHub Contributions
+
+on:
+  schedule:
+    - cron: "0 0 * * *"
+
+  workflow_dispatch:
+
+
+jobs:
+  update:
+
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: write
+
+    steps:
+
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+
+      - name: Get GitHub Contributions
+        run: |
+
+          mkdir -p data
+
+          curl \
+          -H "Authorization: bearer ${{ secrets.GH_TOKEN }}" \
+          -H "Content-Type: application/json" \
+          -d '{"query":"query { user(login:\"moonirul\") { contributionsCollection { contributionCalendar { totalContributions weeks { contributionDays { date contributionCount color } } } } } }"}' \
+          https://api.github.com/graphql \
+          > data/contributions.json
+
+
+      - name: Save data
+
+        run: |
+
+          git config user.name "github-actions"
+
+          git config user.email "github-actions@github.com"
+
+          git add data/contributions.json
+
+          git commit -m "Update GitHub contribution data" || exit 0
+
+          git push

@@ -374,6 +374,9 @@
           <a href="#resume" class="nav-link"
             ><i class="bi bi-file-earmark-person"></i> Resume</a
           >
+          <a href="#github" class="nav-link">
+            <i class="bi bi-github"></i> GitHub Graph
+          </a>
           <a href="#contact" class="nav-link"
             ><i class="bi bi-envelope"></i> Contact</a
           >
@@ -426,20 +429,7 @@
           return window.innerWidth >= 1024;
         }
 
-        function showSection(id) {
-          if (!isDesktop()) {
-            const target = document.getElementById(id);
-
-            if (target) {
-              target.scrollIntoView({
-                behavior: "smooth",
-                block: "start",
-              });
-            }
-
-            return;
-          }
-
+        function hideAllExcept(id) {
           sections.forEach((section) => {
             section.classList.toggle("section-hidden", section.id !== id);
           });
@@ -457,6 +447,16 @@
               behavior: "smooth",
             });
           }
+        }
+
+        function showAllSections() {
+          sections.forEach((section) => {
+            section.classList.remove("section-hidden");
+          });
+
+          allLinks.forEach((link) => {
+            link.classList.remove("active");
+          });
         }
 
         allLinks.forEach((link) => {
@@ -477,36 +477,26 @@
 
             e.preventDefault();
 
-            showSection(id);
+            if (isDesktop()) {
+              hideAllExcept(id);
+            } else {
+              target.scrollIntoView({
+                behavior: "smooth",
+                block: "start",
+              });
+            }
           });
         });
 
-        function showAllSections() {
-          sections.forEach((section) => {
-            section.classList.remove("section-hidden");
-          });
+        // First load
+        showAllSections();
 
-          allLinks.forEach((link) => {
-            link.classList.remove("active");
-          });
-        }
-
-        function resetLayout() {
+        // Resize handling
+        window.addEventListener("resize", function () {
           if (!isDesktop()) {
-            sections.forEach((section) => {
-              section.classList.remove("section-hidden");
-            });
-
-            return;
+            showAllSections();
           }
-
-          // page load এ সব section দেখাবে
-          showAllSections();
-        }
-
-        resetLayout();
-
-        window.addEventListener("resize", resetLayout);
+        });
       })();
     </script>
   </body>
