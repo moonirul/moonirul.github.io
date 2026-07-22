@@ -6,7 +6,6 @@ on:
 
   workflow_dispatch:
 
-
 jobs:
   update:
 
@@ -29,13 +28,17 @@ jobs:
           curl \
           -H "Authorization: bearer ${{ secrets.GH_TOKEN }}" \
           -H "Content-Type: application/json" \
-          -d '{"query":"query { user(login:\"moonirul\") { contributionsCollection(from:\"2025-01-01T00:00:00Z\", to:\"2026-12-31T23:59:59Z\") { contributionCalendar { totalContributions weeks { contributionDays { date contributionCount color } } } } } }"}' \
+          -d '{"query":"query { user(login:\"moonirul\") { contributionsCollection(from:\"2026-01-01T00:00:00Z\", to:\"2026-12-31T23:59:59Z\") { contributionCalendar { totalContributions weeks { contributionDays { date contributionCount color } } } } } }"}' \
           https://api.github.com/graphql \
           > data/contributions.json
 
 
-      - name: Save data
+      - name: Check JSON
+        run: |
+          cat data/contributions.json
 
+
+      - name: Save data
         run: |
 
           git config user.name "github-actions"
