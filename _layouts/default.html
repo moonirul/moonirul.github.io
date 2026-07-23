@@ -227,7 +227,7 @@
       .fixed-footer {
         position: fixed;
         bottom: 0;
-        left: 450px;
+        left: 320px;
         right: 0;
         height: 42px;
         display: flex;
@@ -278,9 +278,9 @@
       }
 
       #main-content section#about {
-        background: #ececec !important;
+        background: #eeeff2d6 !important;
         width: 100%;
-        padding: 20px 80px;
+        padding: 20px 150px;
         margin: 0;
         min-height: auto;
       }
@@ -294,7 +294,7 @@
       #main-content section#resume,
       #main-content section#contact {
         background: #ffffff !important;
-        padding: 30px 80px;
+        padding: 40px 150px;
       }
     </style>
   </head>
@@ -326,7 +326,36 @@
               aria-label="Website"
               ><i class="bi bi-globe"></i
             ></a>
-            {% endif %} {% if site.data.author.github %}
+
+            {% endif %} {% if site.data.author.email %}
+            <a
+              href="mailto:{{ site.data.author.email }}"
+              class="social-icon"
+              aria-label="Email"
+            >
+              <i class="bi bi-envelope-fill"></i>
+            </a>
+            {% endif %} {% if site.data.author.phone %}
+            <a
+              href="https://wa.me/{{ site.data.author.phone | replace: '+', '' | replace: ' ', '' }}"
+              target="_blank"
+              class="social-icon"
+              aria-label="WhatsApp"
+            >
+              <i class="bi bi-whatsapp"></i>
+            </a>
+            {% endif %}
+
+            <a
+              href="https://t.me/monirul154"
+              target="_blank"
+              class="social-icon"
+              aria-label="Telegram"
+            >
+              <i class="bi bi-telegram"></i>
+            </a>
+
+            {% if site.data.author.github %}
             <a
               href="{{ site.data.author.github }}"
               class="social-icon"
@@ -339,13 +368,6 @@
               class="social-icon"
               aria-label="LinkedIn"
               ><i class="bi bi-linkedin"></i
-            ></a>
-            {% endif %} {% if site.data.author.email %}
-            <a
-              href="mailto:{{ site.data.author.email }}"
-              class="social-icon"
-              aria-label="Email"
-              ><i class="bi bi-envelope-fill"></i
             ></a>
             {% endif %}
           </div>

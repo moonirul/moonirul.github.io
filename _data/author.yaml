@@ -10,7 +10,7 @@ address:
   country: Bangladesh
   country_code: BD
 directions: Department of Computer Science
-room: Room YYY
+# room: Room YYY
 
 affiliation: "Department of Computer Science, Green University of Bangladesh"
 affiliation_url: "https://green.edu.bd/"
@@ -20,9 +20,10 @@ bio: >
 
 photo: "/assets/img/me.png" # e.g., /assets/img/me.jpg — leave empty to hide the propic automatically
 # Optional links (leave any blank to hide)
-website: ""
-scholar: "" # e.g., https://scholar.google.com/citations?user=XXXX
-orcid: "" # e.g., https://orcid.org/0000-0000-0000-0000
-github: ""
-twitter: ""
-linkedin: ""
+# website: ""
+# scholar: "" # e.g., https://scholar.google.com/citations?user=XXXX
+# orcid: "" # e.g., https://orcid.org/0000-0000-0000-0000
+github: "https://github.com/moonirul"
+# twitter: ""
+linkedin: "https://www.linkedin.com/in/moonirul"
+phone: "+88 01742 958888"
