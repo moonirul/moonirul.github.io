@@ -1,0 +1,124 @@
+name: "Md. Monirul Islam"
+
+location: "Mirpur-11, Dhaka, Bangladesh"
+
+contact:
+  phone: "+8801742958888"
+  email: "monirrul.cse@gmail.com"
+  linkedin: "linkedin.com/in/moonirul"
+  github: "github.com/moonirul"
+  website: "moonirul.github.io"
+
+
+career_objective: >
+  CSE graduate from Green University of Bangladesh with CGPA 3.72/4.00.
+  Interested in AI, machine learning, software engineering, teaching and research.
+
+
+skills:
+
+  AI Engineering:
+    - LangChain
+    - LangGraph
+    - MCP Server
+    - OpenAI API
+    - AI Agents
+    - RAG Pipelines
+    - Prompt Engineering
+
+  Backend:
+    - FastAPI
+    - REST API
+    - PostgreSQL
+    - Supabase
+    - Authentication
+
+  Programming:
+    - Python
+    - JavaScript
+    - C
+    - SQL
+    - HTML5
+    - CSS3
+
+  Machine Learning:
+    - TensorFlow
+    - Keras
+    - Scikit-learn
+    - Deep Learning
+    - CNN
+    - NLP
+
+
+education:
+
+  - institution: "Green University of Bangladesh"
+    degree: "Bachelor of Science in Computer Science & Engineering"
+    cgpa: "3.72/4.00"
+    duration: "Feb 2022 - Feb 2026"
+    thesis: "Computer Vision Based Real-Time Air Quality Index Estimation"
+
+
+experience:
+
+  - company: "Softvence Delta"
+    role: "AI Automation Engineer"
+    duration: "Apr 2026 - Present"
+    work:
+      - "Developed 15+ AI automation workflows"
+      - "Built AI solutions using Python, FastAPI, n8n and OpenAI API"
+      - "Integrated multiple external APIs"
+
+
+projects:
+
+  - name: "Podcast & WordPress Content Automation"
+    technologies:
+      - Python
+      - FastAPI
+      - OpenAI GPT
+      - Whisper
+      - n8n
+
+  - name: "AI Voice Doctor Appointment System"
+    technologies:
+      - Vapi AI
+      - FastAPI
+      - React
+      - PostgreSQL
+
+  - name: "ML Based Diabetes Prediction"
+    technologies:
+      - Scikit-learn
+      - React
+      - Gemini API
+      - n8n
+
+  - name: "AI Resume Builder SaaS"
+    technologies:
+      - Gemini API
+      - n8n
+      - PDF Generation
+
+
+research:
+
+  - title: "Computer Vision-Based Real-Time Air Quality Index Estimation"
+    area: "Computer Vision and Deep Learning"
+
+  - title: "Towards Understanding Political Discourse in Bengali Memes"
+    area: "Vision Language Model"
+
+
+teaching:
+
+  - "Founder & Educator at StudyWithMoniRuL YouTube Channel"
+  - "Mathematics Tutor (Calculus)"
+  - "Technical Documentation using LATEX"
+
+
+achievements:
+
+  - "Department Dean’s List Award"
+  - "Department VC’s List Award"
+  - "JSC Scholarship"

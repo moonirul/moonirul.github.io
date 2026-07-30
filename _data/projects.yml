@@ -1,0 +1,122 @@
+- title: "Podcast & WordPress Content Automation"
+
+  type: "AI Automation"
+
+  image: "assets/img/projects/automation.png"
+
+  description: >
+    Automated podcast transcription and content repurposing to generate blogs,
+    show notes, and social media assets using FastAPI, Whisper AI, OpenAI GPT,
+    and n8n workflows.
+
+  results: >
+    Automated end-to-end content generation and significantly reduced manual publishing effort.
+
+  tech:
+    - name: Python
+      logo: python
+    - name: FastAPI
+      logo: fastapi
+    - name: OpenAI GPT
+      logo: openai
+    - name: Whisper AI
+      logo: openai
+    - name: n8n
+      logo: n8n
+    - name: Docker
+      logo: docker
+    - name: WordPress
+      logo: wordpress
+
+  github: "https://github.com/moonirul/AI-Powered-Podcast-WordPress-Content-Automation"
+
+  demo: ""
+
+  featured: true
+
+- title: "Doctor Appointment System"
+
+  type: "Healthcare AI"
+
+  image: "assets/img/projects/vapi.png"
+
+  description: >
+    AI voice receptionist for automated appointment booking and patient
+    management using Vapi AI, FastAPI, React, and PostgreSQL.
+
+  results: >
+    Enabled 24/7 AI-powered healthcare appointment automation.
+
+  tech:
+    - name: Vapi AI
+      logo: v
+    - name: FastAPI
+      logo: fastapi
+    - name: React
+      logo: react
+    - name: PostgreSQL
+      logo: postgresql
+
+  github: ""
+
+  demo: "https://app.pixelstack.cloud"
+
+  featured: true
+
+- title: "ML-Based Diabetes Prediction"
+
+  type: "AI SaaS"
+
+  image: "assets/img/projects/diabetes.png"
+
+  description: >
+    AI-powered diabetes risk prediction platform using machine learning,
+    FastAPI, React, Gemini API, and n8n automation.
+
+  results: >
+    Reduced manual health assessment through AI-powered prediction.
+
+  tech:
+    - name: Scikit-learn
+      logo: scikitlearn
+    - name: FastAPI
+      logo: fastapi
+    - name: React
+      logo: react
+    - name: Gemini API
+      logo: googlegemini
+    - name: n8n
+      logo: n8n
+
+  github: ""
+
+  demo: "https://diabetes-prediction-amber.vercel.app"
+
+  featured: true
+
+- title: "AI Resume Builder SaaS"
+
+  type: "Generative AI"
+
+  image: "assets/img/projects/resume.png"
+
+  description: >
+    AI-powered resume generation platform that creates ATS-friendly resumes,
+    generates PDFs, and automates email delivery using Gemini API and n8n.
+
+  results: >
+    Reduced manual resume formatting and enabled one-click resume generation.
+
+  tech:
+    - name: Gemini API
+      logo: googlegemini
+    - name: n8n
+      logo: n8n
+    - name: PDF
+      logo: adobeacrobatreader
+
+  github: ""
+
+  demo: "https://resume-n8n.vercel.app"
+
+  featured: true

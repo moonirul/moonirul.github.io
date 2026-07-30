@@ -1,0 +1,26 @@
+teaching:
+
+  - title: "Founder & Educator"
+    institution: "StudyWithMoniRuL (YouTube Channel)"
+    institution_url: "YOUR_CHANNEL_URL"
+    location: "Online"
+    period: "Apr 2026 – Present"
+    bullets:
+      - "Created tutorials on Artificial Intelligence, Machine Learning, Algorithms, Programming, and Computer Science concepts."
+      - "Explained complex technical topics through structured examples and problem-solving approaches."
+
+  - title: "Mathematics Tutor (Calculus)"
+    institution: "Private Tutoring"
+    location: "Online"
+    period: "2022 – 2024"
+    bullets:
+      - "Guided students in calculus, mathematical reasoning, and problem-solving techniques."
+      - "Helped students improve conceptual understanding and academic performance."
+
+  - title: "Technical Documentation & Presentation Design"
+    institution: "Academic & Research Work"
+    location: "Online"
+    period: "2024 – Present"
+    bullets:
+      - "Developed IEEE-style reports, technical documents, and presentations using LaTeX."
+      - "Prepared research documents with proper citations and visual elements."

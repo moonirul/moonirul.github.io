@@ -1,0 +1,73 @@
+education:
+
+  - title: "B.Sc. in Computer Science & Engineering"
+    institution: "Green University of Bangladesh"
+    institution_url: "https://green.edu.bd/"
+    location: "Purbachal, Narayanganj, Bangladesh"
+    period: "Feb 2022 – Feb 2026"
+    description: >
+      CGPA: 3.72/4.00.
+      Undergraduate studies focused on Computer Science, Artificial Intelligence,
+      Machine Learning, and Computer Vision. Completed an undergraduate thesis on
+      computer vision-based real-time air quality index estimation from
+      ground-level images.
+
+
+  - title: "Higher Secondary Certificate (HSC)"
+    institution: "Al-Hera Academy School & College"
+    location: "Bera, Pabna, Bangladesh"
+    
+    description: >
+      GPA: 5.00/5.00.
+      Completed Higher Secondary education in Science.
+
+
+  - title: "Secondary School Certificate (SSC)"
+    institution: "Al-Hera Academy School & College"
+    location: "Bera, Pabna, Bangladesh"
+    
+    description: >
+      GPA: 5.00/5.00.
+      Completed Secondary School education in Science.
+
+
+
+employment:
+
+  - title: "AI Automation Engineer"
+    institution: "Softvence Delta"
+    location: "Banasree, Dhaka, Bangladesh"
+    period: "Apr 2026 – Present"
+    bullets:
+      - "Developed 15+ AI automation workflows using Python, FastAPI, JavaScript, n8n, and OpenAI APIs."
+      - "Built AI solutions for healthcare, digital publishing, lead intelligence, and content automation."
+      - "Integrated 10+ APIs including OpenAI, Google, Apollo, Hunter, and Apify to automate business workflows."
+      - "Engineered scalable AI systems for workflow automation, data processing, and API orchestration."
+
+      
+teaching:
+
+  - title: "Founder & Educator"
+    institution: "StudyWithMoniRuL (YouTube Channel)"
+    institution_url: "YOUR_CHANNEL_URL"
+    location: "Online"
+    period: "Apr 2026 – Present"
+    bullets:
+      - "Created tutorials on Artificial Intelligence, Machine Learning, Algorithms, Programming, and Computer Science concepts."
+      - "Explained complex technical topics through structured examples and problem-solving approaches."
+
+  - title: "Mathematics Tutor (Calculus)"
+    institution: "Private Tutoring"
+    location: "Online"
+    period: "2022 – 2024"
+    bullets:
+      - "Guided students in calculus, mathematical reasoning, and problem-solving techniques."
+      - "Helped students improve conceptual understanding and academic performance."
+
+  - title: "Technical Documentation & Presentation Design"
+    institution: "Academic & Research Work"
+    location: "Online"
+    period: "2024 – Present"
+    bullets:
+      - "Developed IEEE-style reports, technical documents, and presentations using LaTeX."
+      - "Prepared research documents with proper citations and visual elements."

@@ -1,0 +1,646 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Font (Plus Jakarta Sans & Sora with Bold Weights) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,600;1,700&family=Sora:wght@600;700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <title>{{ page.title | default: site.title }}</title>
+    <meta name="description" content="{{ site.description }}" />
+
+    <!-- Tailwind -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Bootstrap Icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css"
+    />
+
+    <!-- Academicons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.9.4/css/academicons.min.css"
+    />
+
+    <!-- Custom CSS -->
+    <link
+      rel="stylesheet"
+      href="{{ '/assets/css/style.css' | relative_url }}"
+    />
+
+    <style>
+      :root {
+        --sidebar: #ffffff;
+        --page-bg: #f8f5ee;
+        --card-bg: rgba(255, 255, 255, 0.45);
+        --card-hover: rgba(255, 255, 255, 0.75);
+        --border: rgba(0, 0, 0, 0.1);
+        --text: #0f172a;
+        --heading: #172554;
+      }
+
+      .section-hidden {
+        display: none !important;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html,
+      body {
+        margin: 0;
+        padding: 0;
+        height: 100%;
+        font-family: "Plus Jakarta Sans", sans-serif;
+        font-weight: 600; /* Made slightly bolder for premium feel */
+        letter-spacing: -0.015em;
+        color: var(--text);
+        overflow-x: hidden;
+      }
+
+      /* PREMIUM BACKGROUND */
+
+      body {
+        background: #f7f5ef;
+        padding: 0;
+      }
+
+      .page-wrapper {
+        min-height: 100vh;
+      }
+
+      /* SIDEBAR */
+      aside {
+        background: var(--sidebar);
+        color: #0f172a;
+        border-right: 1px solid #e2e8f0;
+      }
+
+      .sidebar-header {
+        padding: 35px 25px 20px;
+        text-align: center;
+        border-bottom: 1px solid #e2e8f0;
+      }
+
+      .sidebar-scroll {
+        padding: 25px;
+        overflow-y: auto;
+        flex: 1;
+      }
+
+      .sidebar-scroll::-webkit-scrollbar {
+        width: 6px;
+      }
+      .sidebar-scroll::-webkit-scrollbar-thumb {
+        background: rgba(0, 0, 0, 0.2);
+        border-radius: 20px;
+      }
+
+      .profile-photo {
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+        object-fit: cover;
+        border: 4px solid #e2e8f0;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        margin: 0 auto;
+      }
+
+      .profile-name {
+        margin-top: 16px;
+        font-family: "Sora", sans-serif;
+        font-size: 20px;
+        font-weight: 800;
+        color: #0f172a;
+      }
+
+      .profile-tagline {
+        margin-top: 4px;
+        font-size: 13px;
+        font-weight: 700;
+        color: #64748b;
+      }
+
+      .social-row {
+        margin-top: 18px;
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+        flex-wrap: wrap;
+      }
+
+      .social-icon {
+        width: 36px;
+        height: 36px;
+        border-radius: 50%;
+        background: #f1f5f9;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #334155;
+        text-decoration: none;
+        transition: 0.3s;
+      }
+      .social-icon:hover {
+        background: #e2e8f0;
+        color: #0f172a;
+        transform: translateY(-2px);
+      }
+
+      .nav-link {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        padding: 2px 5px;
+        margin-bottom: 2px;
+        margin-left: 75px;
+        border-radius: 12px;
+        color: #334155;
+        text-decoration: none;
+        font-size: 14px;
+        font-weight: 700;
+        transition: 0.3s;
+      }
+      .nav-link:hover,
+      .nav-link.active {
+        background: #f1f5f9;
+        color: #0f172a;
+        font-weight: 800;
+      }
+
+      .hire-btn {
+        margin-top: 20px;
+        padding: 9px 14px;
+        border-radius: 10px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 8px;
+
+        background: linear-gradient(135deg, #4f46e5, #3730a3);
+        color: #ffffff;
+
+        font-size: 13px;
+        font-weight: 800;
+        text-decoration: none;
+
+        border: 1px solid rgba(255, 255, 255, 0.12);
+        transition: all 0.25s ease;
+      }
+
+      .hire-btn:hover {
+        background: linear-gradient(135deg, #6366f1, #4338ca);
+        transform: translateY(-2px);
+        box-shadow: 0 8px 20px rgba(79, 70, 229, 0.35);
+      }
+
+      /* MAIN */
+
+      .content-inner {
+        width: 100%;
+        padding: 0px;
+        background: #ffffff;
+      }
+
+      /* SECTION CARD */
+      #main-content section {
+        width: 100%;
+        margin: 30px 0 0;
+        padding: 50px 80px;
+        background: #ffffff;
+        border: 0;
+        box-shadow: none;
+      }
+
+      #main-content section:hover {
+        background: transparent;
+        transform: none;
+        box-shadow: none;
+      }
+
+      #main-content h1,
+      #main-content h2,
+      #main-content h3 {
+        font-family: "Sora", sans-serif;
+        color: var(--heading);
+        font-weight: 800;
+        letter-spacing: -0.02em;
+      }
+      #main-content p,
+      #main-content li {
+        color: #334155;
+        font-weight: 600;
+        line-height: 1.7;
+      }
+
+      /* FOOTER */
+      .fixed-footer {
+        position: fixed;
+        bottom: 0;
+        left: 450px;
+        right: 0;
+        height: 42px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: rgba(255, 255, 255, 0.55);
+        backdrop-filter: blur(10px);
+        border-top: 1px solid var(--border);
+        color: #475569;
+        font-size: 13px;
+        font-weight: 700;
+        z-index: 50;
+      }
+
+      @media (min-width: 1024px) {
+        body {
+          overflow: hidden;
+        }
+        aside {
+          position: fixed;
+          left: 0;
+          top: 0;
+          padding-top: 15px;
+          bottom: 0;
+          width: 450px;
+          display: flex;
+          flex-direction: column;
+        }
+        #main-content {
+          margin-left: 450px;
+          width: calc(100vw - 450px);
+          height: calc(100vh - 42px);
+          overflow-y: auto;
+          overflow-x: hidden;
+          background: #ffffff;
+          padding: 0;
+        }
+      }
+
+      /* ==================== ONLY MOBILE RESPONSIVE FIXES ==================== */
+      @media (max-width: 1023px) {
+        .fixed-footer {
+          left: 0;
+          position: relative;
+          height: 50px;
+        }
+        #main-content {
+          padding: 0;
+        }
+        aside {
+          width: 100%;
+        }
+        /* Mobile e Nav alignment fix */
+        .nav-link {
+          margin-left: 0 !important;
+          padding: 8px 12px;
+        }
+        /* Overriding hardcoded 400px side padding on small mobile screens */
+        #main-content section,
+        #main-content section#about,
+        #main-content section#education,
+        #main-content section#employment,
+        #main-content section#skills,
+        #main-content section#projects,
+        #main-content section#publications,
+        #main-content section#teaching,
+        #main-content section#resume,
+        #main-content section#contact {
+          padding: 25px 20px !important;
+          width: 100% !important;
+        }
+      }
+
+      /* ORIGINAL DESKTOP PADDING OVERRIDES (STAYS EXACTLY AS YOU HAD IT) */
+      #main-content section#about {
+        background: #fefffffc !important;
+        width: 100%;
+        padding: 10px 150px;
+        padding-left: 60px;
+        margin: 0;
+        min-height: auto;
+      }
+
+      #main-content section#education,
+      #main-content section#employment,
+      #main-content section#skills,
+      #main-content section#projects,
+      #main-content section#publications,
+      #main-content section#teaching,
+      #main-content section#resume,
+      #main-content section#contact {
+        background: #ffffff !important;
+        padding: 10px 150px;
+        padding-left: 60px;
+      }
+
+      /* Body */
+      body {
+        font-size: 16px; /* আগে 15-16 হলে শুধু 1px increase */
+      }
+
+      /* Sidebar */
+      .profile-name {
+        font-size: 22px; /* আগে 20px */
+      }
+
+      .profile-tagline {
+        font-size: 14px; /* আগে 13px */
+      }
+
+      .nav-link {
+        font-size: 15px; /* আগে 14px */
+      }
+
+      .hire-btn {
+        font-size: 14px; /* আগে 13px */
+      }
+
+      /* Main Content */
+      #main-content h1 {
+        font-size: 36px;
+      }
+
+      #main-content h2 {
+        font-size: 26px;
+      }
+
+      #main-content h3 {
+        font-size: 20px;
+      }
+
+      #main-content p,
+      #main-content li {
+        font-size: 16px;
+        line-height: 1.8;
+      }
+
+      /* Footer */
+      .fixed-footer {
+        font-size: 14px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="page-wrapper">
+      <!-- ===================== SIDEBAR ===================== -->
+      <aside>
+        <div class="sidebar-header">
+          {% if site.data.author.photo %}
+          <img
+            src="{{ site.data.author.photo }}"
+            alt="{{ site.data.author.name }}"
+            class="profile-photo"
+          />
+          {% endif %}
+
+          <h2 class="profile-name">{{ site.data.author.name }}</h2>
+
+          {% if site.data.author.tagline %}
+          <p class="profile-tagline">{{ site.data.author.tagline }}</p>
+          {% endif %}
+
+          <div class="social-row">
+            {% if site.data.author.website %}
+            <a
+              href="{{ site.data.author.website }}"
+              class="social-icon"
+              aria-label="Website"
+              ><i class="bi bi-globe"></i
+            ></a>
+
+            {% endif %} {% if site.data.author.email %}
+            <a
+              href="mailto:{{ site.data.author.email }}"
+              class="social-icon"
+              aria-label="Email"
+            >
+              <i class="bi bi-envelope-fill"></i>
+            </a>
+            {% endif %} {% if site.data.author.phone %}
+            <a
+              href="https://wa.me/{{ site.data.author.phone | replace: '+', '' | replace: ' ', '' }}"
+              target="_blank"
+              class="social-icon"
+              aria-label="WhatsApp"
+            >
+              <i class="bi bi-whatsapp"></i>
+            </a>
+            {% endif %}
+
+            <a
+              href="https://t.me/monirul154"
+              target="_blank"
+              class="social-icon"
+              aria-label="Telegram"
+            >
+              <i class="bi bi-telegram"></i>
+            </a>
+
+            {% if site.data.author.github %}
+            <a
+              href="{{ site.data.author.github }}"
+              class="social-icon"
+              aria-label="GitHub"
+              ><i class="bi bi-github"></i
+            ></a>
+            {% endif %} {% if site.data.author.linkedin %}
+            <a
+              href="{{ site.data.author.linkedin }}"
+              class="social-icon"
+              aria-label="LinkedIn"
+              ><i class="bi bi-linkedin"></i
+            ></a>
+            {% endif %}
+          </div>
+        </div>
+
+        <nav class="sidebar-scroll">
+          <a href="#home" id="home-btn" class="nav-link">
+            <i class="bi bi-house-fill"></i>
+            Home
+          </a>
+          <a href="#about" class="nav-link"
+            ><i class="bi bi-person"></i> About Me</a
+          >
+          <!-- <a href="#experience" class="nav-link"
+            ><i class="bi bi-briefcase"></i> Experience</a
+          > -->
+
+          <a href="#education" class="nav-link">
+            <i class="bi bi-mortarboard-fill"></i>
+            Education
+          </a>
+
+          <a href="#employment" class="nav-link">
+            <i class="bi bi-briefcase-fill"></i>
+            Employment History
+          </a>
+
+          <a href="#skills" class="nav-link"
+            ><i class="bi bi-code-slash"></i> Technical Skills</a
+          >
+          <a href="#projects" class="nav-link"
+            ><i class="bi bi-folder2-open"></i> Projects</a
+          >
+          <a href="#publications" class="nav-link"
+            ><i class="bi bi-journal-text"></i> Publications</a
+          >
+
+          <a href="#teaching" class="nav-link">
+            <i class="bi bi-person-video3"></i>
+            Teaching & Activities
+          </a>
+
+          <a href="#resume" class="nav-link"
+            ><i class="bi bi-file-earmark-person"></i> Resume</a
+          >
+
+          <a href="#contact" class="nav-link"
+            ><i class="bi bi-envelope"></i> Contact</a
+          >
+
+          <!-- <a href="#contact" id="hire-me-link" class="hire-btn">
+            <i class="bi bi-send-fill"></i> Hire Me
+          </a> -->
+        </nav>
+      </aside>
+
+      <!-- ===================== MAIN CONTENT ===================== -->
+      <main id="main-content">
+        <div id="home"></div>
+
+        <div class="content-inner">{{ content }}</div>
+
+        <div class="fixed-footer">
+          © {{ site.time | date: '%Y' }} {{ site.title }}
+        </div>
+      </main>
+    </div>
+
+    <!-- Active nav + smooth scroll -->
+    <!-- Active nav + section switching -->
+    <script>
+      (function () {
+        const mainContent = document.getElementById("main-content");
+
+        const navLinks = document.querySelectorAll(".nav-link");
+
+        const hireLink = document.getElementById("hire-me-link");
+
+        let allLinks = [...navLinks];
+
+        if (hireLink) {
+          allLinks.push(hireLink);
+        }
+
+        const sections = allLinks
+          .map((link) => {
+            const href = link.getAttribute("href");
+
+            if (!href || !href.startsWith("#")) {
+              return null;
+            }
+
+            return document.getElementById(href.substring(1));
+          })
+          .filter(Boolean);
+
+        function isDesktop() {
+          return window.innerWidth >= 1024;
+        }
+
+        function hideAllExcept(id) {
+          sections.forEach((section) => {
+            section.classList.toggle("section-hidden", section.id !== id);
+          });
+
+          allLinks.forEach((link) => {
+            link.classList.toggle(
+              "active",
+              link.getAttribute("href") === "#" + id,
+            );
+          });
+
+          if (mainContent) {
+            mainContent.scrollTo({
+              top: 0,
+              behavior: "smooth",
+            });
+          }
+        }
+
+        function showAllSections() {
+          sections.forEach((section) => {
+            section.classList.remove("section-hidden");
+          });
+
+          allLinks.forEach((link) => {
+            link.classList.remove("active");
+          });
+        }
+
+        allLinks.forEach((link) => {
+          link.addEventListener("click", function (e) {
+            const href = this.getAttribute("href");
+
+            if (!href || !href.startsWith("#")) {
+              return;
+            }
+
+            const id = href.substring(1);
+
+            const target = document.getElementById(id);
+
+            if (!target) {
+              return;
+            }
+
+            e.preventDefault();
+            if (id === "home") {
+              showAllSections();
+
+              if (mainContent) {
+                mainContent.scrollTo({
+                  top: 0,
+                  behavior: "smooth",
+                });
+              }
+
+              return;
+            }
+
+            if (isDesktop()) {
+              hideAllExcept(id);
+            } else {
+              target.scrollIntoView({
+                behavior: "smooth",
+                block: "start",
+              });
+            }
+          });
+        });
+
+        // First load
+        showAllSections();
+
+        // Resize handling
+        window.addEventListener("resize", function () {
+          if (!isDesktop()) {
+            showAllSections();
+          }
+        });
+      })();
+    </script>
+  </body>
+</html>

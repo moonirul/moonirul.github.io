@@ -1,0 +1,98 @@
+<!-- ===================== GITHUB CONTRIBUTION GRAPH ===================== -->
+
+<section id="github">
+  <div class="flex items-center justify-between mb-5">
+    <div>
+      <h2 class="text-2xl font-bold">GitHub Contributions</h2>
+
+      <p class="text-sm text-slate-500 mt-1">
+        My coding activity and contribution history on GitHub
+      </p>
+    </div>
+
+    <a
+      href="https://github.com/moonirul"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="text-sm font-medium text-indigo-600 hover:text-indigo-800"
+    >
+      View GitHub
+      <i class="bi bi-arrow-up-right"></i>
+    </a>
+  </div>
+
+  <div class="bg-white rounded-2xl p-5 border border-slate-200 shadow-sm">
+    <!-- YEAR FILTER -->
+
+    <div id="github-years" class="flex flex-wrap gap-2 mb-6"></div>
+
+    <!-- MONTH LABEL -->
+
+    <div class="grid grid-cols-12 text-xs text-slate-400 mb-3">
+      <span>Jan</span>
+      <span>Feb</span>
+      <span>Mar</span>
+      <span>Apr</span>
+      <span>May</span>
+      <span>Jun</span>
+
+      <span>Jul</span>
+      <span>Aug</span>
+      <span>Sep</span>
+      <span>Oct</span>
+      <span>Nov</span>
+      <span>Dec</span>
+    </div>
+
+    <!-- CONTRIBUTION GRAPH -->
+
+    <div class="overflow-x-auto pb-2">
+      <div
+        id="github-calendar"
+        class="grid grid-flow-col grid-rows-7 gap-1 w-max"
+      ></div>
+    </div>
+
+    <!-- LEGEND -->
+
+    <div class="flex items-center gap-2 mt-5 text-xs text-slate-500">
+      <span>Less</span>
+
+      <span class="w-[11px] h-[11px] rounded-sm bg-[#ebedf0]"></span>
+
+      <span class="w-[11px] h-[11px] rounded-sm bg-[#9be9a8]"></span>
+
+      <span class="w-[11px] h-[11px] rounded-sm bg-[#40c463]"></span>
+
+      <span class="w-[11px] h-[11px] rounded-sm bg-[#30a14e]"></span>
+
+      <span class="w-[11px] h-[11px] rounded-sm bg-[#216e39]"></span>
+
+      <span>More</span>
+    </div>
+
+    <!-- STATS -->
+
+    <div class="grid md:grid-cols-3 gap-4 mt-6">
+      <div class="bg-green-50 rounded-xl p-4">
+        <p class="text-sm text-slate-500">Total Contributions</p>
+
+        <h3 id="github-total" class="text-2xl font-bold text-green-700">0</h3>
+      </div>
+
+      <div class="bg-blue-50 rounded-xl p-4">
+        <p class="text-sm text-slate-500">Viewing Year</p>
+
+        <h3 id="github-year" class="text-2xl font-bold text-blue-700">-</h3>
+      </div>
+
+      <div class="bg-purple-50 rounded-xl p-4">
+        <p class="text-sm text-slate-500">Active Days</p>
+
+        <h3 id="active-days" class="text-2xl font-bold text-purple-700">0</h3>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script src="./github-calendar.js"></script>

@@ -1,0 +1,126 @@
+skills:
+
+  - category: AI Engineering
+    icon: bi-cpu
+    items:
+      - name: LangChain
+        logo: langchain
+      - name: LangGraph
+        logo: langgraph
+      - name: MCP Server
+        logo: server
+      - name: OpenAI API
+        logo: openai
+      - name: AI Agents
+        logo: robot
+      - name: RAG
+        logo: database
+      - name: Prompt Engineering
+        logo: chat
+
+
+  - category: Programming Languages
+    icon: bi-code-slash
+    items:
+      - name: Python
+        logo: python
+      - name: JavaScript (ES6+)
+        logo: javascript
+      - name: SQL
+        logo: mysql
+      - name: C
+        logo: c
+      - name: HTML5
+        logo: html5
+      - name: CSS3
+        logo: css3
+
+
+  - category: Backend Development
+    icon: bi-server
+    items:
+      - name: FastAPI
+        logo: fastapi
+      - name: REST APIs
+        logo: api
+      - name: PostgreSQL
+        logo: postgresql
+      - name: Supabase
+        logo: supabase
+      - name: Authentication
+        logo: security
+
+
+  - category: Machine Learning & Data Science
+    icon: bi-graph-up
+    items:
+      - name: PyTorch
+        logo: pytorch
+      - name: TensorFlow
+        logo: tensorflow
+      - name: Keras
+        logo: keras
+      - name: Scikit-learn
+        logo: sklearn
+      - name: Pandas
+        logo: pandas
+      - name: NumPy
+        logo: numpy
+      - name: Matplotlib
+        logo: matplotlib
+      - name: OpenCV
+        logo: opencv
+
+
+  - category: Frontend Development
+    icon: bi-window
+    items:
+      - name: React.js
+        logo: react
+      - name: Tailwind CSS
+        logo: tailwindcss
+      - name: JavaScript
+        logo: javascript
+
+
+  - category: Automation & Integration
+    icon: bi-lightning
+    items:
+      - name: n8n
+        logo: n8n
+      - name: Zapier
+        logo: zapier
+      - name: Make.com
+        logo: make
+      - name: API Integration
+        logo: api
+
+
+  - category: Tools & Deployment
+    icon: bi-tools
+    items:
+      - name: Docker
+        logo: docker
+      - name: Git
+        logo: git
+      - name: GitHub
+        logo: github
+      - name: Linux
+        logo: linux
+      - name: Cloud Deployment
+        logo: cloud
+
+
+  - category: Research & Communication
+    icon: bi-journal-text
+    items:
+      - name: Research Methodology
+        logo: researchgate
+      - name: Literature Review
+        logo: readthedocs
+      - name: Technical Writing
+        logo: markdown
+      - name: LaTeX
+        logo: latex
+      - name: Presentation Design
+        logo: presentation
