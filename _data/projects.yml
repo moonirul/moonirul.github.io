@@ -30,7 +30,7 @@
 
   github: "https://github.com/moonirul/AI-Powered-Podcast-WordPress-Content-Automation"
 
-  demo: ""
+  demo: "https://github.com/moonirul/AI-Powered-Podcast-WordPress-Content-Automation"
 
   featured: true
 
@@ -57,7 +57,7 @@
     - name: PostgreSQL
       logo: postgresql
 
-  github: ""
+  github: "https://github.com/moonirul/vapi-doctor-patient-Fornted-React"
 
   demo: "https://app.pixelstack.cloud"
 
@@ -88,7 +88,7 @@
     - name: n8n
       logo: n8n
 
-  github: ""
+  github: "https://github.com/moonirul/vapi-doctor-patient-Fornted-React"
 
   demo: "https://diabetes-prediction-amber.vercel.app"
 
@@ -115,7 +115,7 @@
     - name: PDF
       logo: adobeacrobatreader
 
-  github: ""
+  github: "https://github.com/moonirul/Resume-N8N"
 
   demo: "https://resume-n8n.vercel.app"
 
