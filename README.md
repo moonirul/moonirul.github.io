@@ -104,9 +104,9 @@ I specialize in developing production-ready AI systems using **Python, FastAPI, 
 
 # 📫 Connect With Me
 
-* 💼 LinkedIn: https://linkedin.com/in/moonirul154
-* 💻 GitHub: https://github.com/monirul8888
-* 🌐 Portfolio: https://moniirul.vercel.app
+* 💼 LinkedIn: https://linkedin.com/in/moonirul
+* 💻 GitHub: https://github.com/moonirul
+* 🌐 Portfolio: https://moonirul.github.io
 * 📧 Email: [monirrul.cse@gmail.com](mailto:monirrul.cse@gmail.com)
 
 ---
