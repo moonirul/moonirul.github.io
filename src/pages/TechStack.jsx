@@ -1,3 +1,4 @@
+import React from "react";
 import { useState } from 'react'
 import { PageHeading, Tabs } from '../components/ui'
 import { getIcon } from '../components/icons'

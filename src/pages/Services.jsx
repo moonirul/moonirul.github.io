@@ -1,3 +1,4 @@
+import React from "react";
 import { PageHeading, SectionTitle } from '../components/ui'
 import { getIcon } from '../components/icons'
 import { services, profile } from '../data/content'

@@ -1,3 +1,4 @@
+import React from "react";
 import { useEffect, useState } from 'react'
 import { FaIdCard, FaGraduationCap, FaTools, FaBriefcase, FaFolderOpen, FaLaptopCode, FaRss, FaEdit, FaVolumeUp, FaMoon, FaSnowflake, FaMagic, FaFileDownload, FaCaretDown, FaCaretLeft, FaCaretRight } from 'react-icons/fa'
 import { profile } from '../data/content'

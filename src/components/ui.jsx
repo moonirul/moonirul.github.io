@@ -1,3 +1,4 @@
+import React from "react";
 import { FaCubes, FaRegCalendar, FaRegFlag, FaPlay } from 'react-icons/fa'
 
 // Section heading: grey icon + sub line, big title (cyan words + white words)

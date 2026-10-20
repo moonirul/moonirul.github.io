@@ -1,3 +1,4 @@
+import React from "react";
 import { useState } from 'react'
 import { FaRegBuilding, FaRegFlag } from 'react-icons/fa'
 import { VideoButton } from '../components/ui'

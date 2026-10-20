@@ -1,3 +1,4 @@
+import React from "react";
 import { useState } from 'react'
 import { FaGithub, FaExternalLinkAlt } from 'react-icons/fa'
 import { VideoButton, PageHeading, Tabs } from '../components/ui'
