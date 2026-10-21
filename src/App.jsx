@@ -122,7 +122,7 @@ export default function App() {
           ref={scroller}
           className="scroll-thin h-full overflow-y-auto overflow-x-hidden"
         >
-          <div key={page} className="fade-in">
+          <div key={page} className="page-slide-in">
             <Page />
           </div>
         </div>
