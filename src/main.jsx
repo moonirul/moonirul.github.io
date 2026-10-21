@@ -10,6 +10,7 @@ import "@fontsource/saira/500.css";
 import "@fontsource/saira/600.css";
 
 import "./index.css";
+
 import App from "./App.jsx";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
