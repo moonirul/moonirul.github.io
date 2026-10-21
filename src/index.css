@@ -3,25 +3,27 @@
 @tailwind utilities;
 
 :root {
-  --c-page: 12 16 24;
-  --c-card: 19 26 36;
-  --c-inner: 26 33 44;
-  --c-field: 12 15 21;
-  --c-line: 32 41 54;
-  --c-ink: 255 255 255;
-  --c-mute: 160 168 179;
-  --c-accent: 128 216 248;
-  --c-onaccent: 12 16 24;
+  --c-page: 10 18 14;
+  --c-card: 16 29 22;
+  --c-inner: 23 39 29;
+  --c-field: 10 18 14;
+  --c-line: 39 65 46;
+  --c-ink: 245 255 247;
+  --c-mute: 160 180 164;
+  --c-accent: 34 197 94;
+  --c-onaccent: 5 20 10;
 }
+
+
 :root[data-theme='light'] {
-  --c-page: 143 181 216;
-  --c-card: 217 230 243;
-  --c-inner: 207 223 240;
-  --c-field: 238 244 251;
-  --c-line: 186 203 224;
-  --c-ink: 28 36 48;
-  --c-mute: 100 116 139;
-  --c-accent: 36 106 148;
+  --c-page: 236 250 239;
+  --c-card: 220 242 225;
+  --c-inner: 207 233 213;
+  --c-field: 247 253 248;
+  --c-line: 183 215 190;
+  --c-ink: 24 48 30;
+  --c-mute: 83 112 90;
+  --c-accent: 22 163 74;
   --c-onaccent: 255 255 255;
 }
 

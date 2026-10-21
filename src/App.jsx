@@ -1,8 +1,9 @@
 import React from "react";
-
 import { useEffect, useRef, useState } from "react";
+import { useLocation, useNavigate } from "react-router-dom";
 import { FaBars, FaExpandArrowsAlt, FaCompressArrowsAlt } from "react-icons/fa";
-import Sidebar, { NAV } from "./components/Sidebar";
+
+import Sidebar from "./components/Sidebar";
 import About from "./pages/About";
 import Education from "./pages/Education";
 import TechStack from "./pages/TechStack";
@@ -23,55 +24,83 @@ const PAGES = {
   updates: Updates,
   contact: Contact,
 };
-const fromHash = () => {
-  const h = window.location.hash.replace("#", "");
-  return PAGES[h] ? h : "about";
+
+const getPageFromPath = (pathname) => {
+  const segments = pathname.split("/").filter(Boolean);
+  const lastSegment = segments[segments.length - 1];
+
+  return PAGES[lastSegment] ? lastSegment : "about";
 };
 
 export default function App() {
-  const [page, setPage] = useState(fromHash);
+  const navigate = useNavigate();
+  const location = useLocation();
+
+  const [page, setPage] = useState(() => getPageFromPath(location.pathname));
   const [collapsed, setCollapsed] = useState(false);
   const [drawer, setDrawer] = useState(false);
   const [full, setFull] = useState(false);
+
   const [theme, setTheme] = useState(
     () => localStorage.getItem("theme") || "dark",
   );
   const [accent, setAccent] = useState(() => localStorage.getItem("accent"));
+
   const scroller = useRef(null);
 
   useEffect(() => {
-    const on = () => setPage(fromHash());
-    window.addEventListener("hashchange", on);
-    return () => window.removeEventListener("hashchange", on);
-  }, []);
+    const nextPage = getPageFromPath(location.pathname);
+    setPage(nextPage);
+  }, [location.pathname]);
+
   useEffect(() => {
     document.documentElement.dataset.theme = theme;
     localStorage.setItem("theme", theme);
   }, [theme]);
+
   useEffect(() => {
-    accent
-      ? localStorage.setItem("accent", accent)
-      : localStorage.removeItem("accent");
+    if (accent) {
+      localStorage.setItem("accent", accent);
+    } else {
+      localStorage.removeItem("accent");
+    }
   }, [accent]);
+
   useEffect(() => {
-    const on = () => setFull(!!document.fullscreenElement);
-    document.addEventListener("fullscreenchange", on);
-    return () => document.removeEventListener("fullscreenchange", on);
+    const onFullscreenChange = () => {
+      setFull(Boolean(document.fullscreenElement));
+    };
+
+    document.addEventListener("fullscreenchange", onFullscreenChange);
+
+    return () => {
+      document.removeEventListener("fullscreenchange", onFullscreenChange);
+    };
   }, []);
-  const toggleFull = () =>
-    document.fullscreenElement
-      ? document.exitFullscreen()
-      : document.documentElement.requestFullscreen?.();
+
+  const toggleFull = () => {
+    if (document.fullscreenElement) {
+      document.exitFullscreen();
+    } else {
+      document.documentElement.requestFullscreen?.();
+    }
+  };
+
   useEffect(() => {
-    scroller.current?.scrollTo({ top: 0 });
+    scroller.current?.scrollTo({ top: 0, behavior: "instant" });
   }, [page]);
 
   const go = (id) => {
-    window.location.hash = id;
-    setPage(id);
+    if (!PAGES[id]) return;
+
     setDrawer(false);
+
+    if (id !== page) {
+      navigate(`/${id}`);
+    }
   };
-  const Page = PAGES[page];
+
+  const Page = PAGES[page] || About;
 
   return (
     <>
@@ -86,12 +115,14 @@ export default function App() {
         accent={accent}
         setAccent={setAccent}
       />
+
       {drawer && (
         <div
           className="fixed inset-0 bg-black/60 z-20 min-[1101px]:hidden"
           onClick={() => setDrawer(false)}
         />
       )}
+
       <button
         onClick={() => setDrawer(true)}
         aria-label="Open menu"
@@ -102,9 +133,12 @@ export default function App() {
 
       <main
         className="main-panel bg-card rounded-[1.375rem] overflow-hidden"
-        style={{ "--side": collapsed ? "5.75rem" : "23.5rem" }}
+        style={{
+          "--side": collapsed ? "5.75rem" : "23.5rem",
+        }}
       >
         <div className="corner-dash" />
+
         <button
           onClick={toggleFull}
           aria-label="Toggle fullscreen"
@@ -112,12 +146,14 @@ export default function App() {
           className="group absolute z-20 top-[1.125rem] right-6 w-[3.125rem] h-[3.125rem] rounded-xl bg-page/60 text-mute hover:text-accent flex items-center justify-center text-[1.125rem]"
         >
           {full ? <FaCompressArrowsAlt /> : <FaExpandArrowsAlt />}
+
           {full && (
             <span className="pointer-events-none absolute -top-[1.1rem] right-[-1.5rem] hidden group-hover:block bg-card text-ink text-[1.05rem] rounded-lg px-4 py-1.5 whitespace-nowrap shadow">
               Exit fullscreen
             </span>
           )}
         </button>
+
         <div
           ref={scroller}
           className="scroll-thin h-full overflow-y-auto overflow-x-hidden"
@@ -127,6 +163,7 @@ export default function App() {
           </div>
         </div>
       </main>
+
       <Modals />
     </>
   );

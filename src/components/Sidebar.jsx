@@ -2,7 +2,7 @@ import React from "react";
 import { useEffect, useState } from 'react'
 import { FaIdCard, FaGraduationCap, FaTools, FaBriefcase, FaFolderOpen, FaLaptopCode, FaRss, FaEdit, FaVolumeUp, FaMoon, FaSnowflake, FaMagic, FaFileDownload, FaCaretDown, FaCaretLeft, FaCaretRight } from 'react-icons/fa'
 import { profile } from '../data/content'
-import avatar from '../assets/avatar.svg'
+import avatar from '../assets/monirul.png'
 
 export const NAV = [
   { id: 'about', label: 'About me', icon: FaIdCard },
@@ -78,7 +78,7 @@ export default function Sidebar({ active, onNavigate, collapsed, setCollapsed, o
       <div className={`flex flex-col items-center ${collapsed ? 'pt-8' : 'pt-7'} pb-5`}>
         <div className="relative group">
           <img src={avatar} alt={`${profile.firstName} ${profile.lastName}`}
-            className={`object-cover rounded-xl ring-[0.375rem] ring-page/40 transition-all ${collapsed ? 'w-[3.5rem] h-[3.5rem]' : 'w-[10rem] h-[10rem]'}`} />
+            className={`object-cover rounded-full ring-[0.375rem] ring-page/40 transition-all ${collapsed ? 'w-[3.5rem] h-[3.5rem]' : 'w-[11rem] h-[12rem]'}`} />
           <span className={`status-dot absolute rounded-full bg-accent border-[0.3125rem] border-card ${collapsed ? 'w-5 h-5 -right-1 -bottom-1 border-[0.1875rem]' : 'w-[2.625rem] h-[2.625rem] -right-[0.875rem] -bottom-[0.875rem]'}`} />
           {profile.hireStatus && !collapsed && (
             <span className="pointer-events-none absolute left-1/2 -translate-x-1/2 bottom-[0.6rem] opacity-0 group-hover:opacity-100 transition-opacity bg-[#c9d4e3] text-[#1c2330] rounded-xl px-8 py-2 text-[1.1rem] whitespace-nowrap shadow z-20">{profile.hireStatus}</span>
